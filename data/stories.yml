@@ -1,0 +1,8 @@
+version: "2.0"
+
+stories:
+
+- story: story_bienvenida
+  steps:
+  - intent: bienvenida
+  - action: utter_bienvenida

@@ -1,0 +1,49 @@
+version: "2.0"
+
+intents:
+  - bienvenida
+  - informacion_encuesta
+  - dar_lu
+  - dar_nombre_completo
+  - preferencias_horarios
+  - preguntas
+  - agradecimiento
+  - despedida
+
+responses:
+  utter_bienvenida:
+  - text: Hola como estas?
+
+  utter_presentacion_encuesta:
+  - text:
+
+  utter_detalles_encuestas:
+  - text:
+
+  utter_dar_encuesta:
+  - text:
+
+  utter_pedir_lu:
+  - text:
+
+  utter_pedir_nombre_completo:
+  - text:
+
+  utter_pedir_preferencias_horarias:
+  - text:
+
+  utter_resultados_encuesta:
+  - text:
+
+  utter_despedida:
+  - text:
+  
+  
+  
+  
+  
+  
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

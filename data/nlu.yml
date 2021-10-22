@@ -1,0 +1,30 @@
+version: "2.0"
+
+nlu:
+- intent: bienvenida
+  examples: |
+    - Hola, buenas tardes
+
+- intent: informacion_encuesta
+  examples: |
+
+- intent: dar_lu
+  examples: |
+
+- intent: dar_nombre_completo
+  examples: |
+
+- intent: preferencias_horarios
+  examples: |
+
+- intent: preguntas
+  examples: |
+    - Quiero saber quien es el [profesor](tipo_pregunta) ?
+    - Quiero [informacion del curso](tipo_pregunta) ?
+    - Que [temas](tipo_pregunta) tiene el curso?
+
+- intent: agradecimiento
+  examples: |
+
+- intent: despedida
+  examples: |
