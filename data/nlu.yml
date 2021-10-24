@@ -1,30 +1,85 @@
 version: "2.0"
 
 nlu:
+
+- lookup: DNI
+  examples: |
+    - 1234
+    - 5678
+    - 1111
+    - 9999
+
+- lookup: nombre
+  examples: |
+    - Juan Perez
+    - Carlos Garcia
+    - Maria Gonzalez
+    - Pedro Peralta
+
+- lookup: preferencias_horarias
+  examples: |
+    - Lunes 14hs.
+    - Lunes 17hs.
+    - Lunes 20hs.
+    - Martes 14hs.
+    - Martes 17hs.
+    - Martes 20hs.
+    - Miercoles 14hs.
+    - Miercoles 17hs.
+    - Miercoles 20hs.
+    - Jueves 14hs.
+    - Jueves 17hs.
+    - Jueves 20hs.
+    - Viernes 14hs.
+    - Viernes 17hs.
+    - Viernes 20hs.
+  
 - intent: bienvenida
   examples: |
-    - Hola, buenas tardes
+    - Hola, buen día.
+    - Hola, buenas tardes.
+    - Buenas.
+    - Buen día.
+    - Buenas tardes.
+    - Hola!
 
-- intent: informacion_encuesta
+- intent: pedir_inscripcion
   examples: |
+     - Me gustaría anotarme a este curso.
+     - Vengo para el curso.
+     - Quiero estar en el curso.
+     - ¿Me anotás para este curso?
 
-- intent: dar_lu
+- intent: dar_dni
   examples: |
+    - Mi DNI es [1234](DNI).
 
 - intent: dar_nombre_completo
   examples: |
-
-- intent: preferencias_horarios
+     - Mi nombre es [Juan Perez](nombre)
+     - Mi nombre es [112](nombre)
+     
+     
+- intent: dar_preferencias_horarias
   examples: |
+    - Prefiero los {preferencias_horarias}
+    - Me queda mejor los {preferencias_horarias}
 
-- intent: preguntas
-  examples: |
-    - Quiero saber quien es el [profesor](tipo_pregunta) ?
-    - Quiero [informacion del curso](tipo_pregunta) ?
-    - Que [temas](tipo_pregunta) tiene el curso?
-
-- intent: agradecimiento
-  examples: |
-
-- intent: despedida
-  examples: |
+#- intent: informacion_encuesta
+#  examples: |
+#    - No entendí bien la idea, ¿ me podrías explicar?
+#    - Me podrías dar más detalles de esta encuesta?
+#    - Para qué sirve esto?
+#    - ¿Qué determina esta encuesta?
+#
+#- intent: preguntas
+#  examples: |
+#    - Quiero saber quien es el [profesor](tipo_pregunta) ?
+#    - Quiero [informacion del curso](tipo_pregunta) ?
+#    - Que [temas](tipo_pregunta) tiene el curso?
+#
+#- intent: agradecimiento
+#  examples: |
+#
+#- intent: despedida
+#  examples: |

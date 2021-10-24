@@ -2,48 +2,126 @@ version: "2.0"
 
 intents:
   - bienvenida
-  - informacion_encuesta
-  - dar_lu
+  - pedir_inscripcion
+  - dar_dni
   - dar_nombre_completo
-  - preferencias_horarios
-  - preguntas
-  - agradecimiento
-  - despedida
+  - dar_preferencias_horarias
+#  - informacion_encuesta
+#  - preguntas
+#  - agradecimiento
+#  - despedida
+
+entities:
+  - DNI 
+  - nombre
+  - preferencias_horarias
+
+#slots:
+#  nombre:
+#    type: text
+#    
+#  preferencia_horaria:
+#    type: text
+
+#forms:
+#
+#  form_inscripcion:
+#    required_slots:
+#      dni:
+#        - type: float
+#      nombre:
+#        - type: text
+#      preferencia_horaria:
+#        - type: from_entity
+#          entity: preferencia_horaria
+#
+#  form_DNI:
+#    required_slots:
+#      dni:
+#        - type: float
+#  
+#  form_nombre:
+#    required_slots:
+#      nombre:
+#        - type: text
+#  
+#  form_preferia_horaria:
+#    required_slots:
+#      preferencia_horaria:
+#        - type: text
+#
+#  form_primer_pregunta:
+#     required_slots:
+#       primer_pregunta:
+#         - type: text
+#
+#  form_segunda_pregunta:
+#     required_slots:
+#       segunda_pregunta:
+#         - type: text
+#
+#  form_tercer_pregunta:
+#     required_slots:
+#       tercer_pregunta:
+#         - type: text                   
+# 
 
 responses:
   utter_bienvenida:
   - text: Hola como estas?
+  - text: Bienvenido!
+  - text: Hola!
+  - text: Buenas, todo bien?
 
-  utter_presentacion_encuesta:
-  - text:
-
-  utter_detalles_encuestas:
-  - text:
-
-  utter_dar_encuesta:
-  - text:
-
-  utter_pedir_lu:
-  - text:
+  utter_pedir_dni:
+  - text: Ingresa tu DNI.
+  - text: Ingresa tu documento.
+  - text: Poné tu documento.
+  - text: Poné tu DNI.
 
   utter_pedir_nombre_completo:
-  - text:
-
+  - text: Ingresa tu nombre completo.
+  - text: Ingresa tu nombre y apellido juntos.
+  - text: Poné tu nombre completo.
+  - text: Poné tu nombre y apellido juntos.
+   
   utter_pedir_preferencias_horarias:
-  - text:
+  - text: Ingresa tus preferencias horarias para asistir al taller.
+  - text: Ingresa día y horario para asistir al taller. 
+  - text: Poné tus preferencias horarias para asistir al taller.
+  - text: Poné día y horario para asistir al taller. 
 
-  utter_resultados_encuesta:
-  - text:
+  utter_finalizar_inscripcion:
+  #- text: Perfecto {nombre}, ya hemos realizado tu inscripción al taller. 
+  - text: Perfecto, ya hemos realizado tu inscripción al taller. 
 
-  utter_despedida:
-  - text:
-  
-  
-  
-  
-  
-  
-
+#  utter_presentacion_encuesta:
+#  - text: A continuación te voy a realizar unas preguntas para determinar tu estilo de aprendizaje.
+#  - text: Antes de arrancar, vamos a evaluar tu estilo de aprendizaje a través de unas preguntas.
+#
+#
+#  utter_detalles_encuestas:
+#  - text: Debido a que los estudiantes que asisten al taller poseen diferentes perfiles a la hora de aprender, realizamos
+#          esta encuesta para determinar tu estilo de aprendizaje y podamos enseñarte de acuerdo a estos resultados.      
+#
+#  utter_primer_pregunta:
+#  - text: ¿Te llevás bien con mucha información sobre el tema?  
+#  
+#  utter_segunda_pregunta:
+#  - text: ¿Te gusta participar en la clase?
+#
+#  utter_tercer_pregunta:
+#  - text: ¿Las clases con filminas te resultan productivas?   
+#
+#  utter_resultados_encuesta:
+#  - text: Acá está tu estilo de aprendizaje.
+#  - text: La encuesta arrojó que tu estilo de aprendizaje es...
+#
+#  utter_despedida:
+#  - text: Hasta luego, que disfrutes el curso.
+#  - text: Mucha suerte en este curso.
+#  - text: Adiós, buena suerte! 
+#  
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

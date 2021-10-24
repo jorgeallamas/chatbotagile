@@ -1,4 +1,7 @@
 version: "2.0"
 
 rules:
-
+  - rule: Dar la bienvenida al usuario.
+    steps:
+    - intent: bienvenida
+    - action: utter_bienvenida
