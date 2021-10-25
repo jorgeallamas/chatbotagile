@@ -6,66 +6,67 @@ intents:
   - dar_dni
   - dar_nombre_completo
   - dar_preferencias_horarias
+  - empezar_test
 #  - informacion_encuesta
+#  - responder_primer_pregunta_encuesta
+#  - responder_segunda_pregunta_encuesta
+#  - responder_tercer_pregunta_encuesta
+#  - responder_cuarta_pregunta_encuesta
 #  - preguntas
 #  - agradecimiento
 #  - despedida
 
 entities:
   - DNI 
-  - nombre
+  - nombre_completo
   - preferencias_horarias
 
-#slots:
-#  nombre:
-#    type: text
-#    
-#  preferencia_horaria:
-#    type: text
+slots:
+  DNI:
+    type: text
 
-#forms:
-#
-#  form_inscripcion:
-#    required_slots:
-#      dni:
-#        - type: float
-#      nombre:
-#        - type: text
-#      preferencia_horaria:
-#        - type: from_entity
-#          entity: preferencia_horaria
-#
-#  form_DNI:
-#    required_slots:
-#      dni:
-#        - type: float
-#  
-#  form_nombre:
-#    required_slots:
-#      nombre:
-#        - type: text
-#  
-#  form_preferia_horaria:
-#    required_slots:
-#      preferencia_horaria:
-#        - type: text
-#
-#  form_primer_pregunta:
-#     required_slots:
-#       primer_pregunta:
-#         - type: text
-#
-#  form_segunda_pregunta:
-#     required_slots:
-#       segunda_pregunta:
-#         - type: text
-#
-#  form_tercer_pregunta:
-#     required_slots:
-#       tercer_pregunta:
-#         - type: text                   
-# 
+  nombre_completo:
+    type: text
 
+  preferencias_horarias:
+    type: text
+
+  primer_pregunta:
+     type: text
+
+  segunda_pregunta:
+     type: text
+
+  tercer_pregunta:
+     type: text
+     
+  cuarta_pregunta:
+     type: text  
+
+forms:
+  form_inscripcion:
+    required_slots:
+      DNI:
+        - type: from_entity
+          entity: DNI
+      nombre_completo:
+        - type: from_entity
+          entity: nombre_completo 
+      preferencias_horarias:
+        - type: from_entity
+          entity: preferencias_horarias
+
+  form_test_forma_aprendizaje:
+    required_slots:
+      primer_pregunta:
+        - type: from_text
+      segunda_pregunta:
+        - type: from_text
+      tercer_pregunta:
+        - type: from_text
+      cuarta_pregunta:
+        - type: from_text
+ 
 responses:
   utter_bienvenida:
   - text: Hola como estas?
@@ -73,55 +74,67 @@ responses:
   - text: Hola!
   - text: Buenas, todo bien?
 
-  utter_pedir_dni:
+  utter_ask_DNI:
   - text: Ingresa tu DNI.
   - text: Ingresa tu documento.
   - text: Poné tu documento.
   - text: Poné tu DNI.
 
-  utter_pedir_nombre_completo:
+  utter_ask_nombre_completo:
   - text: Ingresa tu nombre completo.
   - text: Ingresa tu nombre y apellido juntos.
   - text: Poné tu nombre completo.
   - text: Poné tu nombre y apellido juntos.
    
-  utter_pedir_preferencias_horarias:
+  utter_ask_preferencias_horarias:
   - text: Ingresa tus preferencias horarias para asistir al taller.
   - text: Ingresa día y horario para asistir al taller. 
   - text: Poné tus preferencias horarias para asistir al taller.
   - text: Poné día y horario para asistir al taller. 
 
   utter_finalizar_inscripcion:
-  #- text: Perfecto {nombre}, ya hemos realizado tu inscripción al taller. 
-  - text: Perfecto, ya hemos realizado tu inscripción al taller. 
+  - text: Perfecto {nombre_completo}, ya hemos realizado tu inscripción al taller con DNI {DNI} y preferencia {preferencias_horarias}.
 
-#  utter_presentacion_encuesta:
-#  - text: A continuación te voy a realizar unas preguntas para determinar tu estilo de aprendizaje.
-#  - text: Antes de arrancar, vamos a evaluar tu estilo de aprendizaje a través de unas preguntas.
-#
-#
-#  utter_detalles_encuestas:
-#  - text: Debido a que los estudiantes que asisten al taller poseen diferentes perfiles a la hora de aprender, realizamos
-#          esta encuesta para determinar tu estilo de aprendizaje y podamos enseñarte de acuerdo a estos resultados.      
-#
-#  utter_primer_pregunta:
-#  - text: ¿Te llevás bien con mucha información sobre el tema?  
-#  
-#  utter_segunda_pregunta:
-#  - text: ¿Te gusta participar en la clase?
-#
-#  utter_tercer_pregunta:
-#  - text: ¿Las clases con filminas te resultan productivas?   
-#
-#  utter_resultados_encuesta:
-#  - text: Acá está tu estilo de aprendizaje.
-#  - text: La encuesta arrojó que tu estilo de aprendizaje es...
-#
+              
+  utter_presentacion_encuesta:
+  - text: A continuación te voy a realizar unas preguntas para determinar tu estilo de aprendizaje.
+  - text: Antes de arrancar, vamos a evaluar tu estilo de aprendizaje a través de unas preguntas.
+
+
+  utter_detalles_encuestas:
+  - text: Debido a que los estudiantes que asisten al taller poseen diferentes perfiles a la hora de aprender, realizamos
+          esta encuesta para determinar tu estilo de aprendizaje y podamos enseñarte de acuerdo a estos resultados.      
+
+  utter_ask_primer_pregunta:
+  - text: ¿Te llevás bien con mucha información sobre el tema?  
+  
+  utter_ask_segunda_pregunta:
+  - text: ¿Te gusta participar en la clase?
+
+  utter_ask_tercer_pregunta:
+   - text: ¿Las clases con filminas te resultan productivas?
+
+  utter_ask_cuarta_pregunta:
+  - text: Comentame qué sabés acerca de Cloud Computing?
+  - text: Decime con tus palabras tu conocimiento de Cloud Computing.
+
+  utter_resultados_encuesta:
+  - text: Acá está tu estilo de aprendizaje.
+  - text: La encuesta arrojó que tu estilo de aprendizaje es...
+
+  utter_finalizar_test_aprendizaje:
+  - text: "Resultados: {primer_pregunta}, {segunda_pregunta}, {tercer_pregunta}, {cuarta_pregunta}." 
+
 #  utter_despedida:
 #  - text: Hasta luego, que disfrutes el curso.
 #  - text: Mucha suerte en este curso.
 #  - text: Adiós, buena suerte! 
-#  
+# 
+
+  utter_default_response:
+  - text: No te he entendido, podrías repetir?
+
+
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

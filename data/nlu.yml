@@ -2,38 +2,18 @@ version: "2.0"
 
 nlu:
 
-- lookup: DNI
+- regex: DNI
   examples: |
-    - 1234
-    - 5678
-    - 1111
-    - 9999
+    - \d{6,8}
 
-- lookup: nombre
+- regex: nombre_completo
   examples: |
-    - Juan Perez
-    - Carlos Garcia
-    - Maria Gonzalez
-    - Pedro Peralta
+    - \d{1,19}
 
-- lookup: preferencias_horarias
+- regex: preferencias_horarias
   examples: |
-    - Lunes 14hs.
-    - Lunes 17hs.
-    - Lunes 20hs.
-    - Martes 14hs.
-    - Martes 17hs.
-    - Martes 20hs.
-    - Miercoles 14hs.
-    - Miercoles 17hs.
-    - Miercoles 20hs.
-    - Jueves 14hs.
-    - Jueves 17hs.
-    - Jueves 20hs.
-    - Viernes 14hs.
-    - Viernes 17hs.
-    - Viernes 20hs.
-  
+    - /([Ll]unes|[Mm]artes|[Mm]i[eé]rcoles|[Jj]ueves|[Vv]iernes)\s(14|17|20)\shrs./
+ 
 - intent: bienvenida
   examples: |
     - Hola, buen día.
@@ -42,28 +22,33 @@ nlu:
     - Buen día.
     - Buenas tardes.
     - Hola!
+  
+- intent: empezar_test
+  examples: |
+    - quiero hacer el test.
 
 - intent: pedir_inscripcion
   examples: |
-     - Me gustaría anotarme a este curso.
-     - Vengo para el curso.
-     - Quiero estar en el curso.
-     - ¿Me anotás para este curso?
+    - Me gustaría anotarme a este curso.
+    - Vengo para el curso.
+    - Quiero estar en el curso.
+    - ¿Me anotás para este curso?
 
 - intent: dar_dni
   examples: |
-    - Mi DNI es [1234](DNI).
+    - Mi DNI es [15000](DNI).
+    - [1234567](DNI)
 
 - intent: dar_nombre_completo
   examples: |
-     - Mi nombre es [Juan Perez](nombre)
-     - Mi nombre es [112](nombre)
-     
+     - Mi nombre es [jorge](nombre_completo)
+     - [jorge](nombre_completo)
      
 - intent: dar_preferencias_horarias
   examples: |
-    - Prefiero los {preferencias_horarias}
-    - Me queda mejor los {preferencias_horarias}
+    - Prefiero [Lunes 14 hrs.](preferencias_horarias)
+    - Me queda mejor los [Lunes 14 hrs.](preferencias_horarias)
+    - [Lunes 14 hrs.] (preferencias_horarias)
 
 #- intent: informacion_encuesta
 #  examples: |

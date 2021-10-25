@@ -5,3 +5,43 @@ rules:
     steps:
     - intent: bienvenida
     - action: utter_bienvenida
+  
+  - rule: Dar los datos personales al asistente
+    steps:
+      - intent: pedir_inscripcion
+      - action: form_inscripcion
+      - active_loop: form_inscripcion
+
+  - rule: Submit inscripcion
+    condition:
+      - active_loop: form_inscripcion
+    steps:
+      - action: form_inscripcion
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      - action: utter_finalizar_inscripcion
+
+  - rule: Formulario de forma de aprendizaje
+    steps:
+      - intent: empezar_test
+      - action: form_test_forma_aprendizaje
+      - active_loop: form_test_forma_aprendizaje
+
+  - rule: Submit forma de aprendizaje
+    condition:
+      - active_loop: form_test_forma_aprendizaje
+    steps:
+      - action: form_test_forma_aprendizaje
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      - action: utter_finalizar_test_aprendizaje
+
+#  - rule: El usuario realiza una pregunta que el Asistente no reconoce
+#    steps:
+#    - intent: nlu_fallback
+#    - action: utter_default_response
+
+
+    

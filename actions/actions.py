@@ -8,13 +8,13 @@
 # This is a simple example for a custom action which utters "Hello World!"
 
 from typing import Any, Text, Dict, List
-from rasa_sdk import Action, Tracker
+from rasa_sdk import Action, Tracker, FormValidationAction
 from rasa_sdk.executor import CollectingDispatcher
 
-class ActionHelloWorld(Action):
+class ValidateFormTestFormaAprendizaje(FormValidationAction):
 
     def name(self) -> Text:
-        return "action_hello_world"
+        return "validate_form_test_forma_aprendizaje"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
