@@ -7,6 +7,7 @@ intents:
   - dar_nombre_completo
   - dar_preferencias_horarias
   - empezar_test
+  - respuesta_cuestionario_ils
 #  - informacion_encuesta
 #  - responder_primer_pregunta_encuesta
 #  - responder_segunda_pregunta_encuesta
@@ -130,8 +131,8 @@ responses:
   utter_ask_ils2:
   - text: "Me considero: \n a) Realista. \n b) Innovador."
   
-  utter_ask_il3:
-  -text: "Cuando pienso acerca de lo que hice ayer, es más probable que lo haga sobre la base de \ \n a) una imagen. \ \n b) palabras. "
+  utter_ask_ils3:
+  - text: "Cuando pienso acerca de lo que hice ayer, es más probable que lo haga sobre la base de \ \n a) una imagen. \ \n b) palabras. "
 
   utter_ask_ils4:
   - text: "Tengo tendencia a \ \n a) entender los detalles de un tema pero no ver claramente su estructura

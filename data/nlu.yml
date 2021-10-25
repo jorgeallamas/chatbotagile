@@ -2,6 +2,11 @@ version: "2.0"
 
 nlu:
 
+- lookup: respuesta_ils
+  examples: |
+    - a
+    - b
+
 - regex: DNI
   examples: |
     - \d{6,8}
@@ -56,22 +61,3 @@ nlu:
     - [a](respuesta_ils)
     - Mi respuesta es [b](respuesta_ils)
     - [b](respuesta_ils)
-
-#- intent: informacion_encuesta
-#  examples: |
-#    - No entendí bien la idea, ¿ me podrías explicar?
-#    - Me podrías dar más detalles de esta encuesta?
-#    - Para qué sirve esto?
-#    - ¿Qué determina esta encuesta?
-#
-#- intent: preguntas
-#  examples: |
-#    - Quiero saber quien es el [profesor](tipo_pregunta) ?
-#    - Quiero [informacion del curso](tipo_pregunta) ?
-#    - Que [temas](tipo_pregunta) tiene el curso?
-#
-#- intent: agradecimiento
-#  examples: |
-#
-#- intent: despedida
-#  examples: |
