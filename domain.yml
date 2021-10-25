@@ -20,6 +20,7 @@ entities:
   - DNI 
   - nombre_completo
   - preferencias_horarias
+  - respuesta_ils
 
 slots:
   DNI:
@@ -31,17 +32,25 @@ slots:
   preferencias_horarias:
     type: text
 
-  primer_pregunta:
-     type: text
+  ils1:
+    type: text
 
-  segunda_pregunta:
-     type: text
+  ils2:
+    type: text
 
-  tercer_pregunta:
-     type: text
-     
-  cuarta_pregunta:
-     type: text  
+  ils3:
+    type: text
+
+  ils4:
+    type: text
+
+  ils5:
+    type: text
+
+  ils6:
+    type: text
+
+
 
 forms:
   form_inscripcion:
@@ -58,14 +67,24 @@ forms:
 
   form_test_forma_aprendizaje:
     required_slots:
-      primer_pregunta:
-        - type: from_text
-      segunda_pregunta:
-        - type: from_text
-      tercer_pregunta:
-        - type: from_text
-      cuarta_pregunta:
-        - type: from_text
+      ils1:
+        - type: from_entity
+          entity: respuesta_ils
+      ils2:
+        - type: from_entity
+          entity: respuesta_ils
+      ils3:
+        - type: from_entity
+          entity: respuesta_ils
+      ils4:
+        - type: from_entity
+          entity: respuesta_ils
+      ils5:
+        - type: from_entity
+          entity: respuesta_ils
+      ils6:
+        - type: from_entity
+          entity: respuesta_ils
  
 responses:
   utter_bienvenida:
@@ -105,25 +124,31 @@ responses:
   - text: Debido a que los estudiantes que asisten al taller poseen diferentes perfiles a la hora de aprender, realizamos
           esta encuesta para determinar tu estilo de aprendizaje y podamos enseñarte de acuerdo a estos resultados.      
 
-  utter_ask_primer_pregunta:
-  - text: ¿Te llevás bien con mucha información sobre el tema?  
+  utter_ask_ils1:
+  - text: "Entiendo algo mejor si :\n a) Si lo practico. \n b) Si pienso en ello."
+
+  utter_ask_ils2:
+  - text: "Me considero: \n a) Realista. \n b) Innovador."
   
-  utter_ask_segunda_pregunta:
-  - text: ¿Te gusta participar en la clase?
+  utter_ask_il3:
+  -text: "Cuando pienso acerca de lo que hice ayer, es más probable que lo haga sobre la base de \ \n a) una imagen. \ \n b) palabras. "
 
-  utter_ask_tercer_pregunta:
-   - text: ¿Las clases con filminas te resultan productivas?
+  utter_ask_ils4:
+  - text: "Tengo tendencia a \ \n a) entender los detalles de un tema pero no ver claramente su estructura
+completa. \ \n b) entender la estructura completa pero no ver claramente los detalles"
 
-  utter_ask_cuarta_pregunta:
-  - text: Comentame qué sabés acerca de Cloud Computing?
-  - text: Decime con tus palabras tu conocimiento de Cloud Computing.
+  utter_ask_ils5:
+  - text: "Cuando estoy aprendiendo algo nuevo, me ayuda \ \n a) hablar de ello. \ \n b) pensar en ello. "
+  
+  utter_ask_ils6:
+  - text: "Si yo fuera profesor, yo preferiría dar un curso: \ \n a) que trate sobre hechos y situaciones reales de la vida \ \n b) que trate con ideas y teorías. "
 
   utter_resultados_encuesta:
   - text: Acá está tu estilo de aprendizaje.
   - text: La encuesta arrojó que tu estilo de aprendizaje es...
 
   utter_finalizar_test_aprendizaje:
-  - text: "Resultados: {primer_pregunta}, {segunda_pregunta}, {tercer_pregunta}, {cuarta_pregunta}." 
+  - text: "Resultados: {ils1}, {ils2}, {ils3}, {ils4}, {ils5}, {ils6}." 
 
 #  utter_despedida:
 #  - text: Hasta luego, que disfrutes el curso.

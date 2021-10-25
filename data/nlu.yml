@@ -50,6 +50,13 @@ nlu:
     - Me queda mejor los [Lunes 14 hrs.](preferencias_horarias)
     - [Lunes 14 hrs.] (preferencias_horarias)
 
+- intent: respuesta_cuestionario_ils
+  examples: | 
+    - Mi respuesta es [a](respuesta_ils)
+    - [a](respuesta_ils)
+    - Mi respuesta es [b](respuesta_ils)
+    - [b](respuesta_ils)
+
 #- intent: informacion_encuesta
 #  examples: |
 #    - No entendí bien la idea, ¿ me podrías explicar?
