@@ -19,16 +19,16 @@ class ActionSayBartleProfile(Action):
             "b": "A"
         },
         "preg2": {
-            "a": "A",
-            "b": "S"
-        },
-        "preg3": {
             "a": "S",
             "b": "A"
         },
-        "preg4": {
+        "preg3": {
             "a": "A",
             "b": "S"
+        },
+        "preg4": {
+            "a": "S",
+            "b": "A"
         },
         "preg5": {
             "a": "S",
@@ -36,11 +36,11 @@ class ActionSayBartleProfile(Action):
         },
         "preg6": {
             "a": "S",
-            "b": "A"
+            "b": "E"
         },
         "preg7": {
             "a": "S",
-            "b": "A"
+            "b": "E"
         },
         "preg8": {
             "a": "S",
@@ -56,15 +56,15 @@ class ActionSayBartleProfile(Action):
         },
         "preg11": {
             "a": "S",
-            "b": "E"
+            "b": "K"
         },
         "preg12": {
             "a": "S",
-            "b": "E"
+            "b": "K"
         },
         "preg13": {
-            "a": "S",
-            "b": "E"
+            "a": "K",
+            "b": "S"
         },
         "preg14": {
             "a": "K",
@@ -72,6 +72,66 @@ class ActionSayBartleProfile(Action):
         },
         "preg15": {
             "a": "S",
+            "b": "K"
+        }
+        "preg16": {
+            "a": "E",
+            "b": "A"
+        }
+        "preg17": {
+            "a": "E",
+            "b": "A"
+        }
+        "preg18": {
+            "a": "A",
+            "b": "E"
+        }
+        "preg19": {
+            "a": "E",
+            "b": "A"
+        }
+        "preg20": {
+            "a": "E",
+            "b": "A"
+        }
+        "preg21": {
+            "a": "E",
+            "b": "K"
+        }
+        "preg22": {
+            "a": "E",
+            "b": "K"
+        }
+        "preg23": {
+            "a": "E",
+            "b": "K"
+        }
+        "preg24": {
+            "a": "E",
+            "b": "K"
+        }
+        "preg25": {
+            "a": "E",
+            "b": "K"
+        }
+        "preg26": {
+            "a": "A",
+            "b": "K"
+        }
+        "preg27": {
+            "a": "K",
+            "b": "A"
+        }
+        "preg28": {
+            "a": "K",
+            "b": "A"
+        }
+        "preg29": {
+            "a": "A",
+            "b": "K"
+        }
+        "preg30": {
+            "a": "A",
             "b": "K"
         }
     }
