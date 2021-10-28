@@ -6,37 +6,21 @@ rules:
     - intent: bienvenida
     - action: utter_bienvenida
   
-  - rule: Dar los datos personales al asistente
-    steps:
-      - intent: pedir_inscripcion
-      - action: form_inscripcion
-      - active_loop: form_inscripcion
-
-  - rule: Submit inscripcion
-    condition:
-      - active_loop: form_inscripcion
-    steps:
-      - action: form_inscripcion
-      - active_loop: null
-      - slot_was_set:
-          - requested_slot: null
-      - action: utter_finalizar_inscripcion
-
-  - rule: Formulario de forma de aprendizaje
+  - rule: Test de Bartle
     steps:
       - intent: empezar_test
-      - action: form_test_forma_aprendizaje
-      - active_loop: form_test_forma_aprendizaje
+      - action: form_bartle_test
+      - active_loop: form_bartle_test
 
-  - rule: Submit forma de aprendizaje
+  - rule: Submit Test de Bartle
     condition:
-      - active_loop: form_test_forma_aprendizaje
+      - active_loop: form_bartle_test
     steps:
-      - action: form_test_forma_aprendizaje
+      - action: form_bartle_test
       - active_loop: null
       - slot_was_set:
           - requested_slot: null
-      - action: utter_finalizar_test_aprendizaje
+      - action: action_say_bartle_profile
 
 #  - rule: El usuario realiza una pregunta que el Asistente no reconoce
 #    steps:

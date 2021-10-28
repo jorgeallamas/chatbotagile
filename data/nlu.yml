@@ -2,7 +2,7 @@ version: "2.0"
 
 nlu:
 
-- lookup: respuesta_ils
+- lookup: respuesta
   examples: |
     - a
     - b
@@ -55,9 +55,9 @@ nlu:
     - Me queda mejor los [Lunes 14 hrs.](preferencias_horarias)
     - [Lunes 14 hrs.] (preferencias_horarias)
 
-- intent: respuesta_cuestionario_ils
+- intent: respuesta_cuestionario
   examples: | 
-    - Mi respuesta es [a](respuesta_ils)
-    - [a](respuesta_ils)
-    - Mi respuesta es [b](respuesta_ils)
-    - [b](respuesta_ils)
+    - Mi respuesta es [aaa](respuesta)
+    - [a](respuesta)
+    - Mi respuesta es [b](respuesta)
+    - [b](respuesta)

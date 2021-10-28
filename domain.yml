@@ -7,7 +7,7 @@ intents:
   - dar_nombre_completo
   - dar_preferencias_horarias
   - empezar_test
-  - respuesta_cuestionario_ils
+  - respuesta_cuestionario
 #  - informacion_encuesta
 #  - responder_primer_pregunta_encuesta
 #  - responder_segunda_pregunta_encuesta
@@ -21,72 +21,173 @@ entities:
   - DNI 
   - nombre_completo
   - preferencias_horarias
-  - respuesta_ils
+  - respuesta
+
+actions:
+  - action_say_bartle_profile
 
 slots:
   DNI:
     type: text
-
   nombre_completo:
     type: text
-
   preferencias_horarias:
     type: text
-
-  ils1:
+  preg1:
     type: text
-
-  ils2:
+  preg2:
     type: text
-
-  ils3:
+  preg3:
     type: text
-
-  ils4:
+  preg4:
     type: text
-
-  ils5:
+  preg5:
     type: text
-
-  ils6:
+  preg6:
     type: text
-
-
+  preg7:
+    type: text
+  preg8:
+    type: text
+  preg9:
+    type: text
+  preg10:
+    type: text
+  preg11:
+    type: text
+  preg12:
+    type: text
+  preg13:
+    type: text
+  preg14:
+    type: text
+  preg15:
+    type: text
+  # preg16:
+  #   type: text
+  # preg17:
+  #   type: text
+  # preg18:
+  #   type: text
+  # preg19:
+  #   type: text
+  # preg20:
+  #   type: text
+  # preg21:
+  #   type: text
+  # preg22:
+  #   type: text
+  # preg23:
+  #   type: text
+  # preg24:
+  #   type: text
+  # preg25:
+  #   type: text
+  # preg26:
+  #   type: text
+  # preg27:
+  #   type: text
+  # preg28:
+  #   type: text
+  # preg29:
+  #   type: text
+  # preg30:
+  #   type: text
 
 forms:
-  form_inscripcion:
+  form_bartle_test:
     required_slots:
-      DNI:
+      preg1:
         - type: from_entity
-          entity: DNI
-      nombre_completo:
+          entity: respuesta
+      preg2:
         - type: from_entity
-          entity: nombre_completo 
-      preferencias_horarias:
+          entity: respuesta
+      preg3:
         - type: from_entity
-          entity: preferencias_horarias
-
-  form_test_forma_aprendizaje:
-    required_slots:
-      ils1:
+          entity: respuesta
+      preg4:
         - type: from_entity
-          entity: respuesta_ils
-      ils2:
+          entity: respuesta
+      preg5:
         - type: from_entity
-          entity: respuesta_ils
-      ils3:
+          entity: respuesta
+      preg6:
         - type: from_entity
-          entity: respuesta_ils
-      ils4:
+          entity: respuesta
+      preg7:
         - type: from_entity
-          entity: respuesta_ils
-      ils5:
+          entity: respuesta
+      preg8:
         - type: from_entity
-          entity: respuesta_ils
-      ils6:
+          entity: respuesta
+      preg9:
         - type: from_entity
-          entity: respuesta_ils
- 
+          entity: respuesta
+      preg10:
+        - type: from_entity
+          entity: respuesta
+      preg11:
+        - type: from_entity
+          entity: respuesta
+      preg12:
+        - type: from_entity
+          entity: respuesta
+      preg13:
+        - type: from_entity
+          entity: respuesta
+      preg14:
+        - type: from_entity
+          entity: respuesta
+      preg15:
+        - type: from_entity
+          entity: respuesta
+  #    preg16:
+  #      - type: from_entity
+  #        entity: respuesta
+  #    preg17:
+  #      - type: from_entity
+  #        entity: respuesta
+  #    preg18:
+  #      - type: from_entity
+  #        entity: respuesta
+  #    preg19:
+  #      - type: from_entity
+  #        entity: respuesta
+  #    preg20:
+  #      - type: from_entity
+  #        entity: respuesta
+  #    preg21:
+  #      - type: from_entity
+  #        entity: respuesta
+  #    preg22:
+  #      - type: from_entity
+  #        entity: respuesta
+  #    preg23:
+  #      - type: from_entity
+  #        entity: respuesta
+  #    preg24:
+  #      - type: from_entity
+  #        entity: respuesta    
+  #    preg25:
+  #      - type: from_entity
+  #        entity: respuesta
+  #    preg26:
+  #      - type: from_entity
+  #        entity: respuesta
+  #    preg27:
+  #      - type: from_entity
+  #        entity: respuesta
+  #    preg28:
+  #      - type: from_entity
+  #        entity: respuesta
+  #    preg29:
+  #      - type: from_entity
+  #        entity: respuesta
+  #    preg30:
+  #      - type: from_entity
+  #        entity: respuesta
+      
 responses:
   utter_bienvenida:
   - text: Hola como estas?
@@ -114,42 +215,73 @@ responses:
 
   utter_finalizar_inscripcion:
   - text: Perfecto {nombre_completo}, ya hemos realizado tu inscripción al taller con DNI {DNI} y preferencia {preferencias_horarias}.
-
               
   utter_presentacion_encuesta:
   - text: A continuación te voy a realizar unas preguntas para determinar tu estilo de aprendizaje.
   - text: Antes de arrancar, vamos a evaluar tu estilo de aprendizaje a través de unas preguntas.
 
-
   utter_detalles_encuestas:
-  - text: Debido a que los estudiantes que asisten al taller poseen diferentes perfiles a la hora de aprender, realizamos
-          esta encuesta para determinar tu estilo de aprendizaje y podamos enseñarte de acuerdo a estos resultados.      
+  - text: Debido a que los estudiantes que asisten al taller poseen diferentes perfiles a la hora de aprender, realizamos esta encuesta para determinar tu estilo de aprendizaje y podamos enseñarte de acuerdo a estos resultados.      
 
-  utter_ask_ils1:
-  - text: "Entiendo algo mejor si :\n a) Si lo practico. \n b) Si pienso en ello."
+  utter_ask_preg1:
+  - text: "Te sientes mas comodo como jugador en un juego en linea: \ \n a) Hablar con amigos en una taberna. \ \n b) ¿Estas cazando orcos por tu cuenta para obtener experiencia?"
 
-  utter_ask_ils2:
-  - text: "Me considero: \n a) Realista. \n b) Innovador."
+  utter_ask_preg2:
+  - text: "¿Que disfrutas mas en las misiones?: \ \n a) Involucrarse en la historia. \ \n b) Obteniendo."
   
-  utter_ask_ils3:
-  - text: "Cuando pienso acerca de lo que hice ayer, es más probable que lo haga sobre la base de \ \n a) una imagen. \ \n b) palabras. "
+  utter_ask_preg3:
+  - text: "¿Por qué preferirías que te noten en un juego en línea?: \ \n a) Tu equipo. \ \n b) Tu personalidad. "
 
-  utter_ask_ils4:
-  - text: "Tengo tendencia a \ \n a) entender los detalles de un tema pero no ver claramente su estructura
-completa. \ \n b) entender la estructura completa pero no ver claramente los detalles"
+  utter_ask_preg4:
+  - text: "¿Qué disfrutas más en un juego en línea? \ \n a) Obtener los ultimos chismes. \ \n b) Obtener un objeto nuevo"
 
-  utter_ask_ils5:
-  - text: "Cuando estoy aprendiendo algo nuevo, me ayuda \ \n a) hablar de ello. \ \n b) pensar en ello. "
+  utter_ask_preg5:
+  - text: "¿Cuál preferirías tener como jugador en un juego en línea? \ \n a) Un canal privado, a traves del cual usted y sus amigos pueden comunicarse. \ \n b) Tu propia casa valuada en millones de monedas de oro."
   
-  utter_ask_ils6:
-  - text: "Si yo fuera profesor, yo preferiría dar un curso: \ \n a) que trate sobre hechos y situaciones reales de la vida \ \n b) que trate con ideas y teorías. "
+  utter_ask_preg6:
+  - text: "¿Qué disfrutarías más como jugador de juegos en línea? \ \n a) Tener tu propia taberna \ \n b) Hacer sus propios mapas del mundo y luego venderlos. "
+
+  utter_ask_preg7:
+  - text: "¿Qué es más importante para ti en un juego en línea? \ \n a) El numero de personas \ \n b) La cantidad de áreas a explorar. "
+
+  utter_ask_preg8:
+  - text: "¿Qué es más importante para ti? \ \n a) La calidad de los juegos de rol en un juego en linea \ \n b) La singularidad de las caracteristicas y la mecánica del juego."
+
+  utter_ask_preg9:
+  - text: "Eres un jugador de un juego en línea y quieres luchar contra un dragón realmente duro. ¿Cómo abordaría este problema? \ \n a) Haz que un gran grupo de jugadores lo mate \ \n b) Prueba una variedad de armas y magia contra él hasta que encuentres su debilidad."
+
+  utter_ask_preg10:
+  - text: "Eres un jugador de un juego en línea y estás a punto de entrar en una mazmorra desconocida. Tienes la opción de una persona más para tu fiesta. Traes: \ \n a) Un bardo, que es un amigo tuyo y que es genial para entretenerte a ti y a tus amigos. \ \n b) Un mago para identificar los elementos que encuentres allí."
+  
+  utter_ask_preg11:
+  - text: "¿Qué prefieres? \ \n a) Derrotar a tus enemigos \ \n b) Convencer a tus enemigos de que trabajen a tu favor, no en tu contra."
+
+  utter_ask_preg12:
+  - text: "¿Con cuál disfrutarías más? \ \n a) Ganar un duelo con otro jugador \ \n b) Ser aceptado por un clan (un grupo de otros jugadores)."
+
+  utter_ask_preg13:
+  - text: "Es mejor ser: \ \n a) Temido. \ \n b) Amado."
+
+  utter_ask_preg14:
+  - text: "¿Qué prefieres? \ \n a) Escucha lo que alguien tiene que decir \ \n b) Mostrarles la hoja afilada de tu hacha."
+
+  utter_ask_preg15:
+  - text: "En un juego en línea, se abre una nueva área. ¿Qué esperas más?\ \n a) Explorando la nueva area \ \n b) Ser el primero en conseguir los nuevos equipos de la zona."
+
+  #-----------
+
+  # utter_ask_preg16:
+  # - text: "¿Qué prefieres? \ \n a) Derrotar a tus enemigos \ \n b) Convencer a tus enemigos de que trabajen a tu favor, no en tu contra."
+
+  # utter_ask_preg17:
+  # - text: "¿Qué prefieres? \ \n a) Derrotar a tus enemigos \ \n b) Convencer a tus enemigos de que trabajen a tu favor, no en tu contra."
 
   utter_resultados_encuesta:
   - text: Acá está tu estilo de aprendizaje.
   - text: La encuesta arrojó que tu estilo de aprendizaje es...
 
   utter_finalizar_test_aprendizaje:
-  - text: "Resultados: {ils1}, {ils2}, {ils3}, {ils4}, {ils5}, {ils6}." 
+  - text: "Resultados: {preg1}, {preg2}, {preg3}, {preg4}, {preg5}, {preg6}." 
 
 #  utter_despedida:
 #  - text: Hasta luego, que disfrutes el curso.
