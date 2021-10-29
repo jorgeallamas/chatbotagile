@@ -8,6 +8,7 @@ intents:
   - dar_preferencias_horarias
   - empezar_test
   - respuesta_cuestionario
+  - stop
 #  - informacion_encuesta
 #  - responder_primer_pregunta_encuesta
 #  - responder_segunda_pregunta_encuesta
@@ -223,6 +224,9 @@ responses:
   utter_detalles_encuestas:
   - text: Debido a que los estudiantes que asisten al taller poseen diferentes perfiles a la hora de aprender, realizamos esta encuesta para determinar tu estilo de aprendizaje y podamos enseñarte de acuerdo a estos resultados.      
 
+  utter_ask_continuar:
+  - text: ¿Desea continuar?
+
   utter_ask_preg1:
   - text: "Te sientes mas comodo como jugador en un juego en linea: \ \n a) Hablar con amigos en una taberna. \ \n b) ¿Estas cazando orcos por tu cuenta para obtener experiencia?"
 
@@ -257,24 +261,61 @@ responses:
   - text: "¿Qué prefieres? \ \n a) Derrotar a tus enemigos \ \n b) Convencer a tus enemigos de que trabajen a tu favor, no en tu contra."
 
   utter_ask_preg12:
-  - text: "¿Con cuál disfrutarías más? \ \n a) Ganar un duelo con otro jugador \ \n b) Ser aceptado por un clan (un grupo de otros jugadores)."
+  - text: "¿Qué es mas emocionante? \ \n a) Un escenario bien interpretado\ \n b) UNa batalla mortal."
 
   utter_ask_preg13:
-  - text: "Es mejor ser: \ \n a) Temido. \ \n b) Amado."
+  - text: "¿Con cuál disfrutarías más? \ \n a) Ganar un duelo con otro jugador \ \n b) Ser aceptado por un clan (un grupo de otros jugadores)."
 
   utter_ask_preg14:
-  - text: "¿Qué prefieres? \ \n a) Escucha lo que alguien tiene que decir \ \n b) Mostrarles la hoja afilada de tu hacha."
+  - text: "Es mejor ser: \ \n a) Temido. \ \n b) Amado."
 
   utter_ask_preg15:
-  - text: "En un juego en línea, se abre una nueva área. ¿Qué esperas más?\ \n a) Explorando la nueva area \ \n b) Ser el primero en conseguir los nuevos equipos de la zona."
-
-  #-----------
+  - text: "¿Qué prefieres? \ \n a) Escucha lo que alguien tiene que decir \ \n b) Mostrarles la hoja afilada de tu hacha."
 
   # utter_ask_preg16:
-  # - text: "¿Qué prefieres? \ \n a) Derrotar a tus enemigos \ \n b) Convencer a tus enemigos de que trabajen a tu favor, no en tu contra."
+  # - text: "En un juego en línea, se abre una nueva área. ¿Qué esperas más?\ \n a) Explorando la nueva area y descubriendo su historia\ \n b) Ser el primero en conseguir los nuevos equipos de la zona."
 
   # utter_ask_preg17:
-  # - text: "¿Qué prefieres? \ \n a) Derrotar a tus enemigos \ \n b) Convencer a tus enemigos de que trabajen a tu favor, no en tu contra."
+  # - text: "En un juego en línea, preferirías que te conozcan como: \ \n a) Alguien que pueda correr desde dos puntos del mundo y que realmente sepa moverse \ \n b) La persona con el mejor y mas exclusivo equipo del juego."
+
+  # utter_ask_preg18:
+  # - text: "¿Qué prefieres? \ \n a) Convertirte en un heroe mas rapido que tus amigos \ \n b) Conocer mas secretos que tus amigos."
+
+  # utter_ask_preg19:
+  # - text: "Tiendes a: \ \n a) Saber cosas que nadie mas sabe \ \n b) Tener articulos que nadie mas tiene."
+
+  # utter_ask_preg20:
+  # - text: "¿Qué prefieres hacer? \ \n a) Resolver un acertijo que nadie ha resulto \ \n b) Llegar a cierto nivel de experiencia mas rapido que nadie."
+
+  # utter_ask_preg21:
+  # - text: "En un juego en línea, preferiría ser conocido por: \ \n a) Conocimiento. \ \n b) Poder."
+
+  # utter_ask_preg22:
+  # - text: "Prefiririas ganar: \ \n a) Un concurso de trivia. \ \n b) Una batalla en la arena."
+
+  # utter_ask_preg23:
+  # - text: "Si estas solo en un area, crees que: \ \n a) Es seguro explorar. \ \n b) Tendras que buscar presas en otra parte."
+
+  # utter_ask_preg24:
+  # - text: "Te enteras de que otro jugador está planeando tu desaparición. Vos si: \ \n a) Vaya a un area con la que su oponente no este familiarizado y preparese alli \ \n b) Atacarlos antes de que él te ataque."
+
+  # utter_ask_preg25:
+  # - text: "Conoces a un nuevo jugador. Piensas en ellos como: \ \n a) Alguien que pueda apreciar tu conocimiento del juego. \ \n b) Como presa potencial."
+
+  # utter_ask_preg26:
+  # - text: "En un juego en línea, preferirías: \ \n a) Tener una espada dos veces mas poderosa que cualquier otra en el juego. \ \n b) Ser la persona mas temida del juego."
+
+  # utter_ask_preg27:
+  # - text: "En un juego en línea, serías más propenso a presumir de: \ \n a) Cuantos otros jugadores has matado. \ \n b) Tu equipo."
+
+  # utter_ask_preg28:
+  # - text: "Preferirías tener: \ \n a) Un hechizo para dañar a otros jugadores. \ \n b) Un hechizo que aumenta la velocidad a la que ganas puntos de experiencia."
+
+  # utter_ask_preg29:
+  # - text: "Prefieres recibir como recompensa de misión: \ \n a) Puntos de experiencia. \ \n b) Una varita con 3 cargas de un hechizo que te permite controlar a otros jugadores, en contra de su voluntad."
+
+  # utter_ask_preg30:
+  # - text: "Al jugar un videojuego, es más divertido: \ \n a) Tener la puntuacion mas alta de la lista. \ \n b) Derrotar a tu mejor amigo uno a uno."
 
   utter_resultados_encuesta:
   - text: Acá está tu estilo de aprendizaje.

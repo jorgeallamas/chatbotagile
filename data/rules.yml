@@ -6,11 +6,11 @@ rules:
     - intent: bienvenida
     - action: utter_bienvenida
   
-  - rule: Test de Bartle
-    steps:
-      - intent: empezar_test
-      - action: form_bartle_test
-      - active_loop: form_bartle_test
+#  - rule: Test de Bartle
+#    steps:
+#      - intent: empezar_test
+#      - action: form_bartle_test
+#      - active_loop: form_bartle_test
 
   - rule: Submit Test de Bartle
     condition:

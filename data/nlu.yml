@@ -61,3 +61,8 @@ nlu:
     - [a](respuesta)
     - Mi respuesta es [b](respuesta)
     - [b](respuesta)
+
+- intent: stop
+  examples: | 
+    - No quiero continuar con el Test.
+    - No.

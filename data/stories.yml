@@ -1,6 +1,17 @@
 version: "2.0"
 
 stories: 
+- story: Usuario interrumpe el Test de Bartle
+  steps:
+  - intent: empezar_test
+  - action: form_bartle_test
+  - active_loop: form_bartle_test
+  - intent: stop
+  - action: utter_ask_continuar
+  - intent: stop
+  - action: action_deactivate_loop
+  - active_loop: null
+
 
 #- story: Dar los datos personales al asistente
 #  steps:
