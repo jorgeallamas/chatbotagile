@@ -1,24 +1,5 @@
 version: "2.0"
-
 nlu:
-
-- lookup: respuesta
-  examples: |
-    - a
-    - b
-
-- regex: DNI
-  examples: |
-    - \d{6,8}
-
-- regex: nombre_completo
-  examples: |
-    - \d{1,19}
-
-- regex: preferencias_horarias
-  examples: |
-    - /([Ll]unes|[Mm]artes|[Mm]i[eé]rcoles|[Jj]ueves|[Vv]iernes)\s(14|17|20)\shrs./
- 
 - intent: bienvenida
   examples: |
     - Hola, buen día.
@@ -27,37 +8,62 @@ nlu:
     - Buen día.
     - Buenas tardes.
     - Hola!
-  
+- intent: afirmar
+  examples: |
+    - si
+    - Por favor
+    - Por supuesto
+    - Claro
+- intent: negar
+  examples: |
+    - no
+    - mejor no
+    - me arrepentí
+- intent: stop
+  examples: |
+    - stop
+    - please stop
 - intent: empezar_test
   examples: |
     - quiero hacer el test.
-
+    - quiero hacer el testt
+    - quiero hacer el test
 - intent: pedir_inscripcion
   examples: |
     - Me gustaría anotarme a este curso.
     - Vengo para el curso.
     - Quiero estar en el curso.
     - ¿Me anotás para este curso?
-
 - intent: dar_dni
   examples: |
     - Mi DNI es [15000](DNI).
     - [1234567](DNI)
-
 - intent: dar_nombre_completo
   examples: |
-     - Mi nombre es [jorge](nombre_completo)
-     - [jorge](nombre_completo)
-     
+    - Mi nombre es [jorge](nombre_completo)
+    - [jorge](nombre_completo)
 - intent: dar_preferencias_horarias
   examples: |
     - Prefiero [Lunes 14 hrs.](preferencias_horarias)
     - Me queda mejor los [Lunes 14 hrs.](preferencias_horarias)
     - [Lunes 14 hrs.] (preferencias_horarias)
-
 - intent: respuesta_cuestionario
-  examples: | 
+  examples: |
     - Mi respuesta es [aaa](respuesta)
     - [a](respuesta)
     - Mi respuesta es [b](respuesta)
     - [b](respuesta)
+    - [a](respuesta)
+- regex: DNI
+  examples: |
+    - \d{6,8}
+- regex: nombre_completo
+  examples: |
+    - \d{1,19}
+- regex: preferencias_horarias
+  examples: |
+    - /([Ll]unes|[Mm]artes|[Mm]i[eé]rcoles|[Jj]ueves|[Vv]iernes)\s(14|17|20)\shrs./
+- lookup: respuesta
+  examples: |
+    - a
+    - b

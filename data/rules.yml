@@ -12,6 +12,16 @@ rules:
       - action: form_bartle_test
       - active_loop: form_bartle_test
 
+  - rule: Cancelación del test de Bartle
+    condition:
+    - active_loop: form_bartle_test
+    steps:
+    - intent: stop
+    - action: utter_cancelar_test
+    - action: action_reset_bartle_slots
+    - action: action_deactivate_loop
+    - active_loop: null
+
   - rule: Submit Test de Bartle
     condition:
       - active_loop: form_bartle_test
