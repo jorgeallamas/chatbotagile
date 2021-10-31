@@ -6,11 +6,11 @@ rules:
     - intent: bienvenida
     - action: utter_bienvenida
   
-#  - rule: Test de Bartle
-#    steps:
-#      - intent: empezar_test
-#      - action: form_bartle_test
-#      - active_loop: form_bartle_test
+  - rule: Test de Bartle
+    steps:
+      - intent: empezar_test
+      - action: form_bartle_test
+      - active_loop: form_bartle_test
 
   - rule: Cancelación del test de Bartle
     condition:
@@ -32,10 +32,10 @@ rules:
           - requested_slot: null
       - action: action_say_bartle_profile
 
-#  - rule: El usuario realiza una pregunta que el Asistente no reconoce
-#    steps:
-#    - intent: nlu_fallback
-#    - action: utter_default_response
+  - rule: El usuario realiza una pregunta que el Asistente no reconoce
+    steps:
+    - intent: nlu_fallback
+    - action: utter_default_response
 
 
     
