@@ -83,6 +83,7 @@ bartle_answer_points = {
         "preg15": {
             "a": "S",
             "b": "K"
+<<<<<<< HEAD
         },
         "preg16": {
             "a": "E",

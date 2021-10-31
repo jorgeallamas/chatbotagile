@@ -23,6 +23,7 @@ nlu:
   examples: |
     - stop
     - please stop
+    - No quiero continuar con el Test.
 - intent: empezar_test
   examples: |
     - quiero hacer el test.
